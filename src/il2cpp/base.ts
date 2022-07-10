@@ -134,6 +134,10 @@ class Il2CppBase {
         return Il2Cpp.Api._free(pointer);
     }
 
+    static _forModule(moduleName: string): Promise<string> {
+        return forModule(moduleName);
+    }
+
     /** @internal Waits for Unity and Il2Cpp native libraries to be loaded and initialized. */
     private static async initialize(): Promise<void> {
         if (Process.platform == "darwin") {
